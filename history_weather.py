@@ -9,8 +9,9 @@ import seaborn
 
 url = "https://weatherapi-com.p.rapidapi.com/history.json"
 
-user_input = input("Enter city: ")
-date = date.today()
+user_input = 'noordwijk' #input("Enter city: ")
+date = date.today()     # Change this param to input if you want to select a specific date. for now it takes the current date
+
 querystring = {"q": user_input,"dt":date,"lang":"en"}
 
 headers = {
@@ -21,3 +22,15 @@ headers = {
 hist_data = requests.request("GET", url, headers=headers, params=querystring)
 
 print(hist_data.text)
+print(hist_data.json()['forecast']['forecastday'][0]['hour'][0]['temp_c'])
+print(hist_data.json()['forecast']['forecastday'][0]['hour'][0]["time"])
+
+
+
+
+
+#def GetTemp():
+    #temperatures = hist_data['hour'][0]['avgtemp_c']
+    #times = hist_data['hour'][0]['time']
+    #return temperatures, times
+
