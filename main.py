@@ -1,12 +1,10 @@
-# code snippet weatherAPI
-
 import requests
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.widgets import RadioButtons
 import seaborn
-
+# delete unused imports at the end
 
 url = "https://weatherapi-com.p.rapidapi.com/current.json"
 
@@ -29,3 +27,4 @@ feel_temp = weather_data.json()['current']['feelslike_c']
 print(f"The current weather is: {weather}")
 print(f"The current temperature is: {temp_c}")
 print(f"The current temperature feels like: {feel_temp}")
+
